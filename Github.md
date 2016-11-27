@@ -104,6 +104,7 @@ git remote rm  oringin
 git pull origin master
 </pre>
 ##提交上传下载命令
+更换目录使用git add .
 git push命令会将本地仓库推送到远程服务器
 git pull命令则相反，把远程服务器上的仓库同步到本地
 <pre>
@@ -125,3 +126,10 @@ bin和obj是编译目录，里面都不是代码，回来；suo文件是配置�
 ##tag
 可以创建一个tag来指向软件开发中的一个关键时期，比如版本更新的时候可以建一个“v2.0”之列的标签，这样回顾的时候回比较方便，tag的使用主要是查看tag，创建tag，验证tag以及共享tag
 
+##提交的方法
+提交目录下执行
+<pre>
+git add .
+git commit -m 'filename'
+git push origin master
+</pre>
