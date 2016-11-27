@@ -74,7 +74,7 @@ SELINUXTYPE=targeted
 <pre>
 sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config
 </pre>
-**临时使用命令关闭selinxu**
+**临时使用命令关闭selinux**
 <pre>
 [root@linux-node01 ~]# setenforce 0
 [root@linux-node01 ~]# getenforce 
@@ -173,7 +173,7 @@ systemctl restart sshd
 </pre>
 调整为阿里源
 <pre>
-wget -O wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 </pre>
 添加第三方epel源
 
@@ -189,4 +189,13 @@ yum install lrzsz nmap tree dos2unix nc telnet vim net-tools wget -y
 <pre>
 yum upgrade
 reboot
+</pre>
+##CentOS无法使用tab不全功能解决办法
+CentOS7在使用最小化安装的时候，没有安装自动不全的包，需要手动安装。
+<pre>
+yum install bash-completion -y
+</pre>
+或者可以安装这些基本使用的包
+<pre>
+yum groupinstall Base Copatibility libraries Debugging Tools Dial-up Networking suppport Hardware monitoring utilities Performance Tools Devlopment tools
 </pre>
